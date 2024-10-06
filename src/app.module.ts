@@ -2,6 +2,7 @@ import {Module} from '@nestjs/common';
 import {AppController} from './app.controller';
 import {AppService} from './app.service';
 import {SchoolController} from './schools/school/school.controller';
+import { Dialect } from 'sequelize';
 import {SchoolService} from './schools/school/school.service';
 import {SequelizeModule} from "@nestjs/sequelize";
 import {UserModel} from "./models/user.model";
@@ -31,7 +32,7 @@ import {ConfigModule} from "@nestjs/config";
         ConfigModule.forRoot(),
         SequelizeModule.forFeature([SchoolUserModel, SchoolModel, Teams, UserTeams, Sports, EventModel]),
         SequelizeModule.forRoot({
-            dialect: process.env.DIALECT,
+            dialect: process.env.DIALECT as Dialect,
             host: process.env.DATABASE_HOST,
             port: parseInt(process.env.PORT),
             username: process.env.DATABASE_USER,

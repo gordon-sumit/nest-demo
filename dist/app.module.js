@@ -43,7 +43,7 @@ exports.AppModule = AppModule = __decorate([
             config_1.ConfigModule.forRoot(),
             sequelize_1.SequelizeModule.forFeature([schoolUser_model_1.SchoolUserModel, school_model_1.SchoolModel, team_model_1.Teams, userTeam_model_1.UserTeams, sport_model_1.Sports, event_model_1.EventModel]),
             sequelize_1.SequelizeModule.forRoot({
-                dialect: 'mysql',
+                dialect: process.env.DIALECT,
                 host: process.env.DATABASE_HOST,
                 port: parseInt(process.env.PORT),
                 username: process.env.DATABASE_USER,
