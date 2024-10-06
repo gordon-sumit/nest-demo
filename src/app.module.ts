@@ -24,16 +24,18 @@ import {VegetableModel} from "./models/vegetable.model";
 import { join } from 'path';
 import {ServeStaticModule} from "@nestjs/serve-static";
 import * as process from "process";
+import {ConfigModule} from "@nestjs/config";
 
-
+console.log(process.env.DATABASE_HOST,'jugjgygy')
 @Module({
     imports: [
+        ConfigModule.forRoot(),
         SequelizeModule.forFeature([SchoolUserModel, SchoolModel, Teams, UserTeams, Sports, EventModel]),
         SequelizeModule.forRoot({
-            dialect: process.env.DIALECT,
+            dialect: 'mysql',
             host: process.env.DATABASE_HOST,
-            port: process.env.PORT,
-            username: process.env.USERNAME,
+            port: parseInt(process.env.PORT),
+            username: process.env.DATABASE_USER,
             password: process.env.DATABASE_PASSWORD,
             database: process.env.DATABASE_NAME,
             models: [UserModel, SchoolUserModel, SchoolModel, Teams, UserTeams, Sports, EventModel, VegetableModel],
