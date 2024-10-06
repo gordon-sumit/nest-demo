@@ -55,8 +55,7 @@ pids
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
-tsconfig.json
-nest-cli.json
+
 test/*
 
 nestjs-436911-d509d0a71f6b.json
@@ -64,3 +63,5 @@ nestjs-436911-d509d0a71f6b.json
 config
 .eslintrc.js
 tsconfig.build.json
+
+/dist
