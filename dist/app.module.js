@@ -34,6 +34,7 @@ const path_1 = require("path");
 const serve_static_1 = require("@nestjs/serve-static");
 const process = require("process");
 const config_1 = require("@nestjs/config");
+const promise_1 = require("mysql2/promise");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -49,6 +50,7 @@ exports.AppModule = AppModule = __decorate([
                 username: process.env.DATABASE_USER,
                 password: process.env.DATABASE_PASSWORD,
                 database: process.env.DATABASE_NAME,
+                dialectModule: promise_1.default,
                 models: [user_model_1.UserModel, schoolUser_model_1.SchoolUserModel, school_model_1.SchoolModel, team_model_1.Teams, userTeam_model_1.UserTeams, sport_model_1.Sports, event_model_1.EventModel, vegetable_model_1.VegetableModel],
                 autoLoadModels: true,
                 synchronize: true,
