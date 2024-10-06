@@ -34,7 +34,6 @@ const path_1 = require("path");
 const serve_static_1 = require("@nestjs/serve-static");
 const process = require("process");
 const config_1 = require("@nestjs/config");
-console.log(process.env.DATABASE_HOST, 'jugjgygy');
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;

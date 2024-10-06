@@ -26,7 +26,6 @@ import {ServeStaticModule} from "@nestjs/serve-static";
 import * as process from "process";
 import {ConfigModule} from "@nestjs/config";
 
-console.log(process.env.DATABASE_HOST,'jugjgygy')
 @Module({
     imports: [
         ConfigModule.forRoot(),
