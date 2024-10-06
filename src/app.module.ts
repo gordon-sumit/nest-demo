@@ -31,7 +31,7 @@ import {ConfigModule} from "@nestjs/config";
         ConfigModule.forRoot(),
         SequelizeModule.forFeature([SchoolUserModel, SchoolModel, Teams, UserTeams, Sports, EventModel]),
         SequelizeModule.forRoot({
-            dialect: 'mysql',
+            dialect: process.env.DIALECT,
             host: process.env.DATABASE_HOST,
             port: parseInt(process.env.PORT),
             username: process.env.DATABASE_USER,
