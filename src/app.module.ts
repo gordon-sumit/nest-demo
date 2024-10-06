@@ -26,8 +26,8 @@ import { join } from 'path';
 import {ServeStaticModule} from "@nestjs/serve-static";
 import * as process from "process";
 import {ConfigModule} from "@nestjs/config";
-import mysql from 'mysql2/promise';
-
+//import mysql from 'mysql2/promise';
+import mysql2 from 'mysql2'
 @Module({
     imports: [
         ConfigModule.forRoot(),
@@ -39,7 +39,7 @@ import mysql from 'mysql2/promise';
             username: process.env.DATABASE_USER,
             password: process.env.DATABASE_PASSWORD,
             database: process.env.DATABASE_NAME,
-            dialectModule:mysql,
+            dialectModule:mysql2,
             models: [UserModel, SchoolUserModel, SchoolModel, Teams, UserTeams, Sports, EventModel, VegetableModel],
             autoLoadModels: true,
             synchronize: true,
