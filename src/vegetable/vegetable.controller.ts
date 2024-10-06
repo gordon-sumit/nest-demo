@@ -1,8 +1,8 @@
 import {Body, Controller, Get, Param, Post, UploadedFile, UseInterceptors} from '@nestjs/common';
 import {VegetableService} from "./vegetable.service";
-import {FileInterceptor} from "@nestjs/platform-express";
-import {diskStorage} from "multer";
-import {extname} from "path";
+// import {FileInterceptor} from "@nestjs/platform-express";
+// import {diskStorage} from "multer";
+// import {extname} from "path";
 import axios from "axios";
 
 @Controller('vegetable')
