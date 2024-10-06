@@ -12,16 +12,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.GoogleCalendarService = void 0;
 const common_1 = require("@nestjs/common");
 const googleapis_1 = require("googleapis");
-const fs = require("fs");
 const process = require("process");
 let GoogleCalendarService = class GoogleCalendarService {
     constructor() {
-        const key = JSON.parse(fs.readFileSync("nestjs-436911-d509d0a71f6b.json", 'utf8'));
-        this.oauth2Client = new googleapis_1.google.auth.JWT({
-            email: key.client_email,
-            key: key.private_key,
-            scopes: ['https://www.googleapis.com/auth/calendar'],
-        });
     }
     async addEvent(eventData) {
         const calendar = googleapis_1.google.calendar({
