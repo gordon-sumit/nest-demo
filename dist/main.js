@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@nestjs/core");
 const app_module_1 = require("./app.module");
 const swagger_1 = require("@nestjs/swagger");
-export async function bootstrap() {
+async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     const config = new swagger_1.DocumentBuilder()
         .setTitle('Cats example')
@@ -15,10 +15,7 @@ export async function bootstrap() {
     app.enableCors({
         origin: '*',
         methods: ["GET", "POST", "PUT", "DELETE"],
-        credentials: true,
-        allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept, Authentication, Access-control-allow-credentials, Access-control-allow-headers, Access-control-allow-methods, Access-control-allow-origin, User-Agent, Referer, Accept-Encoding, Accept-Language, Access-Control-Request-Headers, Cache-Control, Pragma',
     });
-    console.log(process.env.PORT, 'thisisportvecel');
     await app.listen(3000);
 }
 bootstrap();
