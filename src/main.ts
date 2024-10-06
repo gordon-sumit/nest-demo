@@ -16,6 +16,7 @@ async function bootstrap() {
     origin: '*',
     methods: ["GET", "POST", "PUT", "DELETE"],
   });
-  await app.listen(3000);
+  await app.listen(process.env.PORT || 3000); // Use process.env.PORT for Vercel or default to 3000
+ // await app.listen(3000);
 }
 bootstrap();
