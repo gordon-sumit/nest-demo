@@ -46,7 +46,7 @@ exports.AppModule = AppModule = __decorate([
             sequelize_1.SequelizeModule.forRoot({
                 dialect: process.env.DIALECT,
                 host: process.env.DATABASE_HOST,
-                port: parseInt(process.env.PORT),
+                port: parseInt(process.env.DATABSE_PORT),
                 username: process.env.DATABASE_USER,
                 password: process.env.DATABASE_PASSWORD,
                 database: process.env.DATABASE_NAME,

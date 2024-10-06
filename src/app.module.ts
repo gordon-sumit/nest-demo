@@ -35,7 +35,7 @@ import mysql2 from 'mysql2'
         SequelizeModule.forRoot({
             dialect: process.env.DIALECT as Dialect,
             host: process.env.DATABASE_HOST,
-            port: parseInt(process.env.PORT),
+            port: parseInt(process.env.DATABSE_PORT),
             username: process.env.DATABASE_USER,
             password: process.env.DATABASE_PASSWORD,
             database: process.env.DATABASE_NAME,
